@@ -5,6 +5,13 @@ class IdeasController < ApplicationController
     def create
         @idea = Idea.create(idea_params) 
         #(description: params[:idea][:description], author: params[:idea][:author])
+        if @idea.valid?
+            #implement later
+        else
+            #implement later
+        end
+    end
+    
         redirect_to root_path
     end
     def edit
@@ -18,6 +25,7 @@ class IdeasController < ApplicationController
             redirect_to edit_idea_path(params[:id])
         end
     end
+    
     
     private 
     def idea_params 
