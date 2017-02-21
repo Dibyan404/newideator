@@ -10,7 +10,6 @@ class IdeasController < ApplicationController
         else
             #implement later
         end
-    end
     
         redirect_to root_path
     end
@@ -25,7 +24,11 @@ class IdeasController < ApplicationController
             redirect_to edit_idea_path(params[:id])
         end
     end
-    
+    def destroy 
+        @idea = Idea.find(params[:id])
+        @idea.destroy
+        redirect_to root_path
+    end
     
     private 
     def idea_params 
